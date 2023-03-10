@@ -71,23 +71,24 @@ const addNewCost = async () => {
 }
 
 const editCost = (id) => {
-  const index = allCosts.findIndex(cost => id === cost._id);
-  console.log('index=',index);
-  allCosts[index].isEdit = true;
+  const cost = allCosts.find(cost => id === cost._id);
+  cost.isEdit = true;
   console.log(allCosts);
   render();
 }
 
 
 const applayEditCost = async (id, placeText, amountText, dataValue) => {
-  const index = allCosts.findIndex(cost => id === cost._id);
-  console.log('index=',index);
-  console.log(allCosts);
+  //const index = allCosts.findIndex(cost => id === cost._id);
+  //console.log('index=',index);
+  //console.log(allCosts);
+  const cost = allCosts.find(cost => id === cost._id)
 
   if (!placeText.trim() || !amountText.trim() ||  !dataValue.trim()) {// error!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     //showError('Введите текст');
-    console.log('errorrrr')
-    allCosts[index].isEdit = false;
+    //console.log('errorrrr')
+    //allCosts[index].isEdit = false;
+    cost.isEdit = false;
     return
   }
   try {
@@ -103,10 +104,10 @@ const applayEditCost = async (id, placeText, amountText, dataValue) => {
       })
     });
       const editedCost  = await response.json();
-      allCosts[index].place = editedCost.place;
-      allCosts[index].amount = editedCost.amount;
-      allCosts[index].data = editedCost.data
-      allCosts[index].isEdit = false;
+      cost.place = editedCost.place;
+      cost.amount = editedCost.amount;
+      cost.data = editedCost.data
+      cost.isEdit = false;
       
       render();
   } catch(error) {
@@ -115,8 +116,8 @@ const applayEditCost = async (id, placeText, amountText, dataValue) => {
 }
 
 const cancelEditCost = (id) => {
-  const index = allCosts.findIndex(cost => id === cost._id);
-  allCosts[index].isEdit = false;
+  const cost = allCosts.find(cost => id === cost._id);
+  cost.isEdit = false;
   render();
 }
 
