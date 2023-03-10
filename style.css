@@ -1,0 +1,82 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  width: 80%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.total {
+  display: flex;
+  justify-content: end;
+}
+
+.total__count {
+  padding-right: 2%;
+}
+
+.input-section {
+  padding: 1%;
+}
+
+ .content-page-section {
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+} 
+
+.conteiner {
+  display: flex;
+  align-items: center;
+}
+
+.button-cost {  
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.buttonEditCost {
+  background-image: url('img/edit.svg');
+}
+
+.buttonDeleteCost {
+  background-image: url('img/delete.svg');
+}
+
+.buttonApplyEdit {
+  background-image: url('img/apply.svg');
+}
+.buttonCancelEdit {
+  background-image: url('img/cancel.svg');
+}
+
+.conteiner__count-cost{
+width: 2%;
+}
+
+.conteiner__place-cost{
+width: 20%;
+}
+
+.conteiner__amount-cost{
+width: 7%;
+}
+
+.conteiner__data-cost{
+width: 30%;
+}
